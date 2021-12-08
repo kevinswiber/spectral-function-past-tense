@@ -1,6 +1,6 @@
 {
   "name": "spectral-function-past-tense",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Test Spectral values for past tense.",
   "main": "index.js",
   "repository": "https://github.com/kevinswiber/spectral-function-past-tense",
