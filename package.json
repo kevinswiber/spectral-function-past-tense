@@ -1,10 +1,10 @@
 {
-  "name": "spectral-nlp-tense",
-  "type": "commonjs",
+  "name": "spectral-function-past-tense",
   "version": "1.0.0",
-  "description": "Test AsyncAPI descriptions for past tense.",
+  "description": "Test Spectral values for past tense.",
   "main": "index.js",
   "keywords": [
+    "openapi",
     "asyncapi",
     "spectral"
   ],
