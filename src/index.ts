@@ -6,14 +6,14 @@ type Options = {
   overrides?: string[];
 };
 
-export default (input: string | unknown, options: Options = {}): IFunctionResult[] | void => {
+export default (input: string | unknown, options?: Options): IFunctionResult[] | void => {
   if (typeof input !== "string") {
     return;
   }
 
   const words: string[] = noCase(input).split(" ");
 
-  if (options.overrides) {
+  if (options?.overrides) {
     const isOverride = words.find(word => options.overrides?.includes(word));
     if (isOverride) {
       return;
