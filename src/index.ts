@@ -1,32 +1,53 @@
-import { IFunctionResult } from "@stoplight/spectral-core";
+import { createRulesetFunction } from "@stoplight/spectral-core";
 import { noCase } from "change-case";
-const Tag = require("en-pos").Tag;
+import { Tag } from "en-pos";
 
 type Options = {
   overrides?: string[];
 };
 
-export default (input: string | unknown, options?: Options): IFunctionResult[] | void => {
-  if (typeof input !== "string") {
-    return;
-  }
-
-  const words: string[] = noCase(input).split(" ");
-
-  if (options?.overrides) {
-    const isOverride = words.find(word => options.overrides?.includes(word));
-    if (isOverride) {
+export default createRulesetFunction(
+  {
+    input: {
+      type: "string",
+    },
+    options: {
+      type: ["object", "null"],
+      additionalProperties: false,
+      properties: {
+        overrides: {
+          type: "array",
+          items: {
+            type: "string",
+          },
+          minItems: 1,
+        },
+      },
+    },
+  },
+  (input: string, options?: Options) => {
+    if (options?.overrides?.find(override => override.toLowerCase() === input.toLowerCase())) {
       return;
     }
-  }
 
-  const tags = new Tag(words).initial().smooth().tags;
+    const words: string[] = noCase(input).split(" ");
 
-  if (!tags.includes("VBD")) {
-    return [
-      {
-        message: "Value must be past tense.",
-      },
-    ];
-  }
-};
+    if (options?.overrides) {
+      const overrides = options.overrides.map(override => override.toLowerCase());
+      const isOverride = words.find(word => overrides.includes(word));
+      if (isOverride) {
+        return;
+      }
+    }
+
+    const tags = new Tag(words).initial().smooth().tags;
+
+    if (!tags.includes("VBD")) {
+      return [
+        {
+          message: `Value "${input}" must be past tense.`,
+        },
+      ];
+    }
+  },
+);

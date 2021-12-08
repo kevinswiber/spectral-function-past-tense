@@ -12,7 +12,8 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "build": "tsc --build"
+    "build": "tsc --build",
+    "watch": "tsc --watch"
   },
   "dependencies": {
     "change-case": "^4.1.2",

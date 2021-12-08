@@ -1,0 +1,10 @@
+functions: [past]
+formats: [asyncapi2]
+rules:
+  rule:
+    given: "$.channels.*.[publish,subscribe].message.name"
+    then:
+      function: past
+      functionOptions:
+        overrides:
+          - turnOnOff
