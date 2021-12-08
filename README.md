@@ -33,7 +33,7 @@ To wrap the `spectral-function-past-tense` custom function, create a simple Node
 named `past.js` with the following contents:
 
 ```js
-import past from "../../dist";
+import past from "spectral-function-past-tense";
 export default past;
 ```
 
