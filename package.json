@@ -1,0 +1,36 @@
+{
+  "name": "spectral-nlp-tense",
+  "type": "commonjs",
+  "version": "1.0.0",
+  "description": "Test AsyncAPI descriptions for past tense.",
+  "main": "index.js",
+  "keywords": [
+    "asyncapi",
+    "spectral"
+  ],
+  "author": "Kevin Swiber <kswiber@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc --build"
+  },
+  "dependencies": {
+    "change-case": "^4.1.2",
+    "en-pos": "^1.0.16"
+  },
+  "devDependencies": {
+    "@stoplight/spectral-core": "^1.6.1",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.12",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.4.3",
+    "ts-jest": "^27.1.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  }
+}

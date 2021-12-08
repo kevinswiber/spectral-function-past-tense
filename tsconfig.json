@@ -1,0 +1,19 @@
+{
+  "include": ["src", "__tests__", "jest.config.js"],
+  "exclude": ["node_modules", "**/__*__/**"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "target": "ES2019",
+    "module": "CommonJS",
+    "lib": ["es2020"],
+    "strict": true,
+    "pretty": true,
+    "sourceMap": true,
+    "declaration": true,
+    "removeComments": true,
+    "skipLibCheck": true,
+    "noEmitHelpers": true,
+    "importHelpers": true
+  }
+}
