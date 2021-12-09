@@ -1,10 +1,13 @@
 {
   "name": "spectral-function-past-tense",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Test Spectral values for past tense.",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "repository": "https://github.com/kevinswiber/spectral-function-past-tense",
   "homepage": "https://github.com/kevinswiber/spectral-function-past-tense",
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "openapi",
     "asyncapi",
