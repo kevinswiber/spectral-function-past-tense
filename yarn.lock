@@ -1403,11 +1403,6 @@ ci-info@^3.2.0:
   resolved "https://registry.npmjs.org/ci-info/-/ci-info-3.3.0.tgz"
   integrity sha512-riT/3vI5YpVH6/qomlDnJow6TBee2PBKSEpx3O32EGPYbWGIRsIlGRms3Sm74wYE1JMo8RnO04Hb12+v1J5ICw==
 
-cities-list@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.npmjs.org/cities-list/-/cities-list-1.0.3.tgz"
-  integrity sha1-yyF9GeofNV/IM9Fzp1KtmZLxJAw=
-
 cjs-module-lexer@^1.0.0:
   version "1.2.2"
   resolved "https://registry.npmjs.org/cjs-module-lexer/-/cjs-module-lexer-1.2.2.tgz"
@@ -1648,29 +1643,19 @@ emoji-regex@^8.0.0:
   resolved "https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz"
   integrity sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==
 
-en-inflectors@^1.0.7:
+en-inflectors@^1.0.12, en-inflectors@^1.0.7:
   version "1.0.12"
   resolved "https://registry.npmjs.org/en-inflectors/-/en-inflectors-1.0.12.tgz"
   integrity sha1-/TNHdmCKAhy0ICFX8g1Sq5NK94o=
   dependencies:
     en-stemmer "^1.0.2"
 
-en-lexicon@^1.0.8:
+en-lexicon@^1.0.11:
   version "1.0.11"
   resolved "https://registry.npmjs.org/en-lexicon/-/en-lexicon-1.0.11.tgz"
   integrity sha1-P02oqcypqQb1ELjs4RYxvj/REF8=
   dependencies:
     en-inflectors "^1.0.7"
-
-en-pos@^1.0.16:
-  version "1.0.16"
-  resolved "https://registry.npmjs.org/en-pos/-/en-pos-1.0.16.tgz"
-  integrity sha1-W27mfu1SqOESZ/PRX6dQEQESP7A=
-  dependencies:
-    cities-list "^1.0.3"
-    en-inflectors "^1.0.7"
-    en-lexicon "^1.0.8"
-    humannames "^1.0.5"
 
 en-stemmer@^1.0.2:
   version "1.0.3"

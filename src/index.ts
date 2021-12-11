@@ -1,5 +1,5 @@
 import { noCase } from "change-case";
-import { Tag } from "en-pos";
+import { Tag } from "./en-pos";
 
 type Options = {
   overrides?: string[];

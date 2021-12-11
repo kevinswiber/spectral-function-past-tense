@@ -1,6 +1,6 @@
 {
   "name": "spectral-function-past-tense",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Test Spectral values for past tense.",
   "main": "./dist/index.js",
   "repository": "https://github.com/kevinswiber/spectral-function-past-tense",
@@ -22,7 +22,9 @@
   },
   "dependencies": {
     "change-case": "^4.1.2",
-    "en-pos": "^1.0.16"
+    "en-inflectors": "^1.0.12",
+    "en-lexicon": "^1.0.11",
+    "humannames": "^1.0.5"
   },
   "devDependencies": {
     "@stoplight/spectral-formats": "^1.0.1",

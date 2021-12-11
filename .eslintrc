@@ -4,6 +4,7 @@
     "node": true,
     "es6": true
   },
+  "ignorePatterns": ["src/en-pos/**"],
   "extends": ["eslint:recommended", "plugin:prettier/recommended", "plugin:@typescript-eslint/recommended"],
   "rules": {
     "prettier/prettier": ["error", { "singleQuote": false }],
