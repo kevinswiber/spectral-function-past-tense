@@ -1,5 +1,6 @@
 _Note: This has been inlined from en-pos on NPM and modified to removed the reference to cities-list. The list is quite
-big and impacts imports of the parent module._
+big and impacts imports of the parent module. It also removes a reference to humannames, which also causes issues and is
+unneeded._
 
 # en-pos
 

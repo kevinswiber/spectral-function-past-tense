@@ -8,7 +8,6 @@ const brill_rules_1 = require("./smoothing/brill_rules");
 const ing_exceptions_1 = require("./smoothing/ing_exceptions");
 const complex_words_1 = require("./tagging/complex_words");
 const contractions_1 = require("./tagging/contractions");
-const given_names_1 = require("./tagging/given_names");
 const lexicon_1 = require("./tagging/lexicon");
 const meta_1 = require("./tagging/meta");
 const non_letters_1 = require("./tagging/non_letters");
@@ -49,25 +48,11 @@ class Tag {
                     this.blocked[i] = true;
                     continue;
                 }
-                let givenNameSensitive = given_names_1.default(token, true);
-                if (givenNameSensitive) {
-                    this.tags[i] = givenNameSensitive;
-                    this.confidence[i] = 0.9;
-                    this.blocked[i] = true;
-                    continue;
-                }
                 let lexiconInsensitive = lexicon_1.default(token);
                 if (lexiconInsensitive) {
                     this.tags[i] = lexiconInsensitive;
                     this.confidence[i] = 0.8;
                     this.blocked[i] = false;
-                    continue;
-                }
-                let givenNameInsensitive = given_names_1.default(token);
-                if (givenNameInsensitive) {
-                    this.tags[i] = givenNameInsensitive;
-                    this.confidence[i] = 0.8;
-                    this.blocked[i] = true;
                     continue;
                 }
                 let metaBasedResolution = meta_1.default(meta);
