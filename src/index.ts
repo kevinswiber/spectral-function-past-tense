@@ -1,4 +1,3 @@
-import { createRulesetFunction } from "@stoplight/spectral-core";
 import { noCase } from "change-case";
 import { Tag } from "en-pos";
 
@@ -6,48 +5,44 @@ type Options = {
   overrides?: string[];
 };
 
-export default createRulesetFunction(
-  {
-    input: {
-      type: "string",
-    },
-    options: {
-      type: ["object", "null"],
-      additionalProperties: false,
-      properties: {
-        overrides: {
-          type: "array",
-          items: {
-            type: "string",
-          },
-          minItems: 1,
-        },
-      },
-    },
-  },
-  (input: string, options?: Options) => {
-    if (options?.overrides?.find(override => override.toLowerCase() === input.toLowerCase())) {
-      return;
+export default (input: string, options?: Options): { message: string }[] | undefined => {
+  if (typeof input !== "string") {
+    return [{ message: "invalid input, input should be a string" }];
+  }
+
+  if (options?.overrides) {
+    if (!Array.isArray(options.overrides)) {
+      throw new Error("functionOptions of `past`: `overrides` should be an array of strings");
     }
 
-    const words: string[] = noCase(input).split(" ");
-
-    if (options?.overrides) {
-      const overrides = options.overrides.map(override => override.toLowerCase());
-      const isOverride = words.find(word => overrides.includes(word));
-      if (isOverride) {
-        return;
+    for (const override of options.overrides) {
+      if (typeof override !== "string") {
+        throw new Error("functionOptions of `past`: `overrides` should be an array of strings");
       }
     }
+  }
 
-    const tags = new Tag(words).initial().smooth().tags;
+  if (options?.overrides?.find(override => override.toLowerCase() === input.toLowerCase())) {
+    return;
+  }
 
-    if (!tags.includes("VBD")) {
-      return [
-        {
-          message: `Value "${input}" must be past tense.`,
-        },
-      ];
+  const words: string[] = noCase(input).split(" ");
+
+  if (options?.overrides) {
+    const overrides = options.overrides.map(override => override.toLowerCase());
+    const isOverride = words.find(word => overrides.includes(word));
+    if (isOverride) {
+      return;
     }
-  },
-);
+  }
+
+  const tags = new Tag(words).initial().smooth().tags;
+
+  if (!tags.includes("VBD")) {
+    return [
+      {
+        message: `Value "${input}" must be past tense.`,
+      },
+    ];
+  }
+};

@@ -1,6 +1,5 @@
 import { readFile } from "fs/promises";
 import path from "path";
-import past from "../src";
 import { Spectral } from "@stoplight/spectral-core";
 import ruleset from "./__fixtures__/.spectral";
 
