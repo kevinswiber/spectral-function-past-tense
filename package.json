@@ -1,6 +1,6 @@
 {
   "name": "spectral-function-past-tense",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Test Spectral values for past tense.",
   "main": "./dist/index.js",
   "repository": "https://github.com/kevinswiber/spectral-function-past-tense",
@@ -17,7 +17,7 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "build": "tsc --build",
+    "build": "tsc --build && cp -r ./src/en-pos ./dist/",
     "watch": "tsc --watch"
   },
   "dependencies": {
